@@ -1,0 +1,311 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    position: relative;
+
+    font-family: Arial, sans-serif;
+}
+
+.fondo-fijo {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url("fondo.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    z-index: -2;
+}
+
+.contenido {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    gap: 18px;
+}
+.mensaje-amor {
+    margin: 0;
+
+    font-family:
+        "Comic Sans MS",
+        "Comic Sans",
+        cursive;
+
+    font-size: clamp(28px, 8vw, 46px);
+
+    font-weight: bold;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    line-height: 1.1;
+
+    text-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.55);
+
+    z-index: 5;
+
+    flex-shrink: 0;
+}
+
+.galeria {
+    position: relative;
+
+    width: 94%;
+    max-width: 550px;
+
+    height: 75vh;
+    max-height: 750px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 1;
+}
+
+.foto {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 20px;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    opacity: 0;
+
+    transition:
+        opacity 2s ease-in-out;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+.foto.activa {
+
+    opacity: 1;
+}
+
+.controles-musica {
+
+    position: fixed;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    z-index: 20;
+}
+
+.controles-musica button {
+
+    width: 58px;
+    height: 58px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #ffd83d;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.controles-musica button:active {
+
+    transform: scale(0.88);
+}
+
+.icono-play {
+
+    width: 0;
+
+    height: 0;
+
+    border-top:
+        11px solid transparent;
+
+    border-bottom:
+        11px solid transparent;
+
+    border-left:
+        17px solid #5c4500;
+
+    margin-left: 4px;
+}
+
+.icono-pausa {
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+}
+
+
+.icono-pausa span {
+
+    display: block;
+
+    width: 5px;
+
+    height: 21px;
+
+    border-radius: 3px;
+
+    background: #5c4500;
+}
+
+#playPausa.reproduciendo .icono-play {
+
+    display: none;
+}
+
+
+#playPausa.reproduciendo .icono-pausa {
+
+    display: flex;
+}
+
+.corazon {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 29px;
+
+    line-height: 1;
+
+    color: #5c4500;
+
+    transform:
+        translateY(1px);
+}
+
+@media (max-width: 400px) {
+
+    .galeria {
+
+        width: 94%;
+
+        height: 70vh;
+    }
+
+
+    .controles-musica {
+
+        bottom: 18px;
+
+        gap: 12px;
+    }
+
+
+    .controles-musica button {
+
+        width: 54px;
+
+        height: 54px;
+    }
+
+
+    .corazon {
+
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .contenido {
+        padding: 15px;
+
+        gap: 12px;
+    }
+
+    .mensaje-amor {
+        font-size: 30px;
+    }
+
+    .galeria {
+        width: 94%;
+        height: 68vh;
+    }
+
+    .controles-musica {
+        bottom: 18px;
+        gap: 12px;
+    }
+
+    .controles-musica button {
+        width: 54px;
+        height: 54px;
+    }
+
+    .corazon {
+        font-size: 27px;
+    }
+}
